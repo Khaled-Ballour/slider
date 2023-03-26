@@ -11,12 +11,24 @@ const SlickCorousel = () => {
     speed: 500,
     sliderToShow: 1,
     sliderToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
   return (
     <section className="slick-container">
       <Slider {...settings}>
-        <div>1</div>
-        <div>2</div>
+        {list.map((person) => {
+          const { id, image, name, title, quote } = person;
+          return (
+            <article key={id}>
+              <img src={image} alt={name} className="person-img" />
+              <h5 className="name">{name}</h5>
+              <p className="title">{title}</p>
+              <p className="text">{quote}</p>
+              <FaQuoteRight className="icon" />
+            </article>
+          );
+        })}
       </Slider>
     </section>
   );
