@@ -8,13 +8,16 @@ const SlickCorousel = () => {
   const settings = {
     dots: true,
     Infinite: true,
-    speed: 2000,
+    speed: 500,
     sliderToShow: 1,
     sliderToScroll: 1,
   };
   return (
     <section className="slick-container">
-      <Slider {...settings} />
+      <Slider {...settings}>
+        <div>1</div>
+        <div>2</div>
+      </Slider>
     </section>
   );
 };
